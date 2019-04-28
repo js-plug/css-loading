@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!--<title><%= htmlWebpackPlugin.options.title %></title>-->
+  <style>
+    #pr-home {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      user-select: none;
+      overflow: hidden
+    }
+    
+    .pr-home__main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -100%)
+    }
+    
+    .home__loading {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .home__title {
+      font-size: 14px;
+    }
+    
+    .home__loading .home__loading-square {
+      position: absolute;
+      top: 50%;
+      width: 25px;
+      height: 7px;
+      background: #7b7b7b;
+      box-shadow: 2px 2px 3px 0px #464646;
+    }
+    
+    .home__loading .square1 {
+      left: 70px;
+      -webkit-animation: dominos 1s 0.125s ease infinite;
+      animation: dominos 1s 0.125s ease infinite;
+    }
+    
+    .home__loading .square2 {
+      left: 60px;
+      -webkit-animation: dominos 1s 0.3s ease infinite;
+      animation: dominos 1s 0.3s ease infinite;
+    }
+    
+    .home__loading .square3 {
+      left: 50px;
+      -webkit-animation: dominos 1s 0.425s ease infinite;
+      animation: dominos 1s 0.425s ease infinite;
+    }
+    
+    .home__loading .square4 {
+      left: 40px;
+      -webkit-animation: dominos 1s 0.540s ease infinite;
+      animation: dominos 1s 0.540s ease infinite;
+    }
+    
+    .home__loading .square5 {
+      left: 30px;
+      -webkit-animation: dominos 1s 0.665s ease infinite;
+      animation: dominos 1s 0.665s ease infinite;
+    }
+    
+    .home__loading .square6 {
+      left: 20px;
+      -webkit-animation: dominos 1s 0.79s ease infinite;
+      animation: dominos 1s 0.79s ease infinite;
+    }
+    
+    .home__loading .square7 {
+      left: 10px;
+      -webkit-animation: dominos 1s 0.9s ease infinite;
+      animation: dominos 1s 0.9s ease infinite;
+    }
+    
+    .home__loading .square8 {
+      left: 0px;
+      -webkit-animation: dominos 1s 1s ease infinite;
+      animation: dominos 1s 1s ease infinite;
+    }
+    
+    @-webkit-keyframes dominos {
+      50% {
+        opacity: 0.7;
+      }
+      75% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      80% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes dominos {
+      50% {
+        opacity: 0.7;
+      }
+      75% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      80% {
+        opacity: 1;
+      }
+    }
+    
+    .home__title dot {
+      display: inline-block;
+      height: 1em;
+      line-height: 1;
+      text-align: left;
+      vertical-align: -.25em;
+      overflow: hidden;
+    }
+    
+    .home__title dot::before {
+      display: block;
+      content: '...\A..\A.';
+      white-space: pre-wrap; /* 也可以是white-space: pre */
+      animation: dot 3s infinite step-start both;
+    }
+    
+    @keyframes dot {
+      33% {
+        transform: translateY(-2em);
+      }
+      66% {
+        transform: translateY(-1em);
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div id="pr-home">
+    <div class="pr-home__main">
+      <div class="home__loading">
+        <div class="home__loading-square square1"></div>
+        <div class="home__loading-square square2"></div>
+        <div class="home__loading-square square3"></div>
+        <div class="home__loading-square square4"></div>
+        <div class="home__loading-square square5"></div>
+        <div class="home__loading-square square6"></div>
+        <div class="home__loading-square square7"></div>
+        <div class="home__loading-square square8"></div>
+      </div>
+      <div class="home__title">
+        正在加载资源
+        <dot>...</dot>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- built files will be auto injected -->
+</body>
+</html>
